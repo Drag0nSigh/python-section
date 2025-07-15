@@ -1,0 +1,5 @@
+bs4==0.0.2
+flake8==7.3.0
+isort==6.0.1
+pytest==8.4.1
+requests==2.32.4

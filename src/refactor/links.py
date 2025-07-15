@@ -1,8 +1,8 @@
 import datetime
 from datetime import date
 
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
 
 
 class ParsePageLinks:
@@ -72,4 +72,3 @@ class ParsePageLinks:
                     print(f'Ссылка {href} вне диапазона дат')
             except Exception as e:
                 print(f'Не удалось извлечь дату из ссылки {href}: {e}')
-

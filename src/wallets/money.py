@@ -1,13 +1,20 @@
+from dataclasses import dataclass
 from typing import Any
+
 from src.wallets.currency import Currency
 from src.wallets.exceptions import NegativeValueException, NotComparisonException
-from dataclasses import dataclass
 
 
 @dataclass
 class Money:
     value: float
     currency: Currency
+
+    def __init__(self, value: float, currency: Currency):
+        if value < 0:
+            raise NegativeValueException()
+        self.value = value
+        self.currency = currency
 
     def __add__(self, other: 'Money') -> 'Money':
         if self.currency != other.currency:

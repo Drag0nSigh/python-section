@@ -62,11 +62,15 @@ class TestWallet:
         assert usd not in wallet
 
     def test_add(self, wallet):
-        wallet.add(Money(value=100, currency=rub)).add(Money(value=200, currency=rub))
+        wallet.add(
+            Money(value=100, currency=rub)).add(Money(value=200, currency=rub)
+                                                )
         assert wallet[rub] == Money(value=800, currency=rub)
 
     def test_sub(self, wallet):
-        wallet.sub(Money(value=100, currency=rub)).sub(Money(value=200, currency=rub))
+        wallet.sub(
+            Money(value=100, currency=rub)).sub(Money(value=200, currency=rub)
+                                                )
         assert wallet[rub] == Money(value=200, currency=rub)
 
     def test_sub__negative(self, wallet):
