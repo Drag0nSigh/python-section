@@ -38,7 +38,7 @@ class TestModel:
         assert model.slug == "new-slug"
         assert model.payload["meta"]["slug"] == "new-slug"
 
-    @pytest.mark.skip("no need to implement")
+    # @pytest.mark.skip("no need to implement")
     def test_set__empty_nested(self, model):
         model.href = "new-href"
         assert model.href == "new-href"
